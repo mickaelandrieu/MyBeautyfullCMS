@@ -1,0 +1,21 @@
+﻿@model Todo.Site.Models.Article
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<article class="article article-detail">
+    <h2>@Html.DisplayFor(model => model.title)</h2>
+    <p class="article-intro">
+       @Html.DisplayFor(model => model.content)
+        <br />
+        paru le : <time datetime="@Html.DisplayFor(model => model.createdAt)">@Html.DisplayFor(model => model.createdAt)</time>
+    </p>
+
+</article>
+
+<p>
+    @Html.ActionLink("Editer", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Retour à la liste", "List")
+</p>
