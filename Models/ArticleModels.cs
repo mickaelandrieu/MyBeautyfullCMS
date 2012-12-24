@@ -27,17 +27,23 @@ namespace Todo.Site.Models
         { 
             this.createdAt = DateTime.Now;
         }
-        /*[Required(ErrorMessage = "Merci de remplir le formulaire")]
-        [Display(Name = "Email")]*/
+        [Required(ErrorMessage = "Merci de remplir le formulaire")]
         [Key]
         public int Id { get; set; }
         public DateTime createdAt { get; set; }
         [Required]
+        [Display(Name = "Titre de l'article")]
         public string title { get; set; }
+
+        [Display(Name = "Introduction (extrait)")]
         public string introduction { get; set;}
+
         [Required]
+        [Display(Name = "Contenu principal")]
         public string content { get; set; }
+
         [Required]
+        [Display(Name = "Activer l'article ?")]
         public Boolean status { get; set; }
     }
 

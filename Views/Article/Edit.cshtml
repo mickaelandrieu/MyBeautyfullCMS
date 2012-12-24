@@ -1,32 +1,22 @@
 ﻿@model Todo.Site.Models.Article
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edition d'un article";
 }
 
-<h2>Edit</h2>
-
-@using (Html.BeginForm()) {
+@using (Html.BeginForm(null, null, FormMethod.Post, new { @class = "span10" })) {
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Article</legend>
+        <legend>Edition d'un article</legend>
 
         @Html.HiddenFor(model => model.Id)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.createdAt)
+            @Html.LabelFor(model => model.title, , new { @class = "span10" })
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.createdAt)
-            @Html.ValidationMessageFor(model => model.createdAt)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.title)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.title)
+            @Html.EditorFor(model => model.title, new { @class = "span10" })
             @Html.ValidationMessageFor(model => model.title)
         </div>
 
@@ -34,7 +24,7 @@
             @Html.LabelFor(model => model.introduction)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.introduction)
+            @Html.TextAreaFor(model => model.introduction, new { @class = "span10" })
             @Html.ValidationMessageFor(model => model.introduction)
         </div>
 
@@ -42,20 +32,20 @@
             @Html.LabelFor(model => model.content)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.content)
+            @Html.TextAreaFor(model => model.content, new { @class = "span10" })
             @Html.ValidationMessageFor(model => model.content)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.status)
-        </div>
+         <label class="checkbox">
+            <input type="checkbox"> Activer le Post ?
+        </label>
         <div class="editor-field">
-            @Html.EditorFor(model => model.status)
             @Html.ValidationMessageFor(model => model.status)
         </div>
+            
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Sauvegarder les modifications" class="btn btn-primary" />
         </p>
     </fieldset>
 }

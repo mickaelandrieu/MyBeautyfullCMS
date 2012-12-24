@@ -10,10 +10,11 @@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
+    <section id="main-container" class="container-fluid">
         <header>
             <div class="navbar-wrapper">
               <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
-              <div class="container">
+              <div class="container-fluid">
 
                 <div class="navbar navbar-inverse">
                   <div class="navbar-inner">
@@ -27,69 +28,41 @@
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                       <ul class="nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li class="active">@Html.ActionLink("Accueil", "Index", "Home")</li>
+                        <li>@Html.ActionLink("À propos de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
-                        <li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                          <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li class="divider"></li>
-                            <li class="nav-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                          </ul>
-                        </li>
                       </ul>
+                        <div style="float: right;">@Html.Partial("_LoginPartial")</div>
                     </div><!--/.nav-collapse -->
                   </div><!-- /.navbar-inner -->
                 </div><!-- /.navbar -->
 
               </div> <!-- /.container -->
             </div><!-- /.navbar-wrapper -->
-
-            <div class="content-wrapper">
-                    <nav>
-                        <div class="navigation-bar">
-                            <div class="navigation-bar-inner">
-                                <div class="brand">
-                                    <span class="name">@Html.ActionLink("My Beautifull CMS", "List")</span>
-                                </div>
-                                
-                                <div style="float: right;">@Html.Partial("_LoginPartial")</div>
-                                            
-
-                                <ul>
-                                    <li>@Html.ActionLink("Accueil", "Index", "Home")</li>
-                                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                                    <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-
-
         </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+        
+                
+        <section class="span10" >
+        <!--Body content-->
+                @RenderSection("featured", required: false)
+            <section id="principal-view">
                 @RenderBody()
             </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My Beautifull CMS - développé à l'aide d'ASP.NET MVC</p>
-                </div>
-            </div>
+        </section>
+        <section class="span2" id="aside-view">
+        <!--Sidebar content-->
+        </section>
+
+           
+        
+        <footer class="span12">
+            <p>&copy; @DateTime.Now.Year - My Beautifull CMS - développé à l'aide d'ASP.NET MVC</p>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/myscript")
         @RenderSection("scripts", required: false)
+    </section>
     </body>
 </html>
