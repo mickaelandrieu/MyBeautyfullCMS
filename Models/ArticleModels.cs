@@ -30,6 +30,7 @@ namespace Todo.Site.Models
         [Required(ErrorMessage = "Merci de remplir le formulaire")]
         [Key]
         public int Id { get; set; }
+        [Display(Name = "Date de création")]
         public DateTime createdAt { get; set; }
         [Required]
         [Display(Name = "Titre de l'article")]

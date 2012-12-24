@@ -6,12 +6,15 @@
 @{
     Layout = "~/Views/Shared/_createFormLayout.cshtml";
 }
-<h2>Create</h2>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Création d'un nouvel Article</h3>
 
-@using (Html.BeginForm()) {
+</div>
+    @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-
-    <fieldset>
+        <div class="modal-body">
+             <fieldset>
         <legend>Article</legend>
 
         <div class="editor-label">
@@ -45,14 +48,11 @@
             @Html.EditorFor(model => model.status)
             @Html.ValidationMessageFor(model => model.status)
         </div>
-
-        <p>
-            <input type="submit" value="Create" id="btn-create-article" />
-        </p>
-    </fieldset>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
+        </div>
+<div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Retour</button>
+    <!--<input type="submit" value="Create" id="btn-create-article" />-->
+    <input type="submit" value="Créer l'article" class="btn btn-primary">
 </div>
-
+        
+    }

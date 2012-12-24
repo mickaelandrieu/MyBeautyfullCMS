@@ -4,8 +4,7 @@ $("#createForm").click(function () {
         type: "GET",
         url: 'http://localhost:11111/article/Create',
     }).done(function (response) {
-        $('#Form').append(response);
-        $('#Form').css('display', 'block');
+        $('#createArticleForm').append(response);
     }
     );
 });
