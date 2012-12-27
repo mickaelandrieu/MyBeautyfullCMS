@@ -18,13 +18,10 @@ namespace Todo.Site
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/myscript").Include(
-                        "~/Scripts/myscript.js"
-                ));
-
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/site.js").Include(
+                        "~/Scripts/myscript.js",
                         "~/Scripts/bootstrap.js"
-                ));
+                        ));
 
             // Utilisez la version de développement de Modernizr pour développer et apprendre. Puis, lorsque vous êtes
             // prêt pour la production, utilisez l’outil de génération sur http://modernizr.com pour sélectionner uniquement les tests dont vous avez besoin.

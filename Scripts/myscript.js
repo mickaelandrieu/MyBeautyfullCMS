@@ -2,7 +2,7 @@
 $("#createForm").click(function () {
     $.ajax({
         type: "GET",
-        url: 'http://localhost:11111/article/Create',
+        url: 'http://untest.apphb.com/article/Create',
     }).done(function (response) {
         $('#createArticleForm').append(response);
     }
