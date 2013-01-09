@@ -8,16 +8,6 @@ using System.Web.Security;
 
 namespace Todo.Site.Models
 {
-    public class UsersContext : DbContext
-    {
-        public UsersContext()
-            : base("Models_")
-        {
-        }
-
-        public DbSet<UserProfile> UserProfiles { get; set; }
-    }
-
     [Table("UserProfile")]
     public class UserProfile
     {

@@ -263,7 +263,7 @@ namespace Todo.Site.Controllers
             if (ModelState.IsValid)
             {
                 // Insérer un nouvel utilisateur dans la base de données
-                using (UsersContext db = new UsersContext())
+                using (BlogContext db = new BlogContext())
                 {
                     UserProfile user = db.UserProfiles.FirstOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     // Vérifier si l'utilisateur n'existe pas déjà

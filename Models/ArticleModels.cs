@@ -8,18 +8,6 @@ using System.Data.Entity;
 
 namespace Todo.Site.Models
 {
-
-    public class ArticlesContext : DbContext
-    {
-        public ArticlesContext()
-            : base("DefaultConnection")
-        {
-        }
-        public DbSet<Article> Articles { get; set; }
-    }
-
-
- 
     public class Article
     {
 

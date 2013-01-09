@@ -6,13 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Todo.Site.Models;
-using Todo.Site.ArticlesContext__Todo.Site;
 
 namespace Todo.Site.Controllers
 {
     public class ArticleController : Controller
     {
-        private Models_ db = new Models_();
+        private BlogContext db = new BlogContext();
 
         //
         // GET: /Article/

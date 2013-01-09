@@ -25,11 +25,11 @@ namespace Todo.Site.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<BlogContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new BlogContext())
                     {
                         if (!context.Database.Exists())
                         {
