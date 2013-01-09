@@ -18,7 +18,7 @@ namespace Todo.Site
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+            bundles.Add(new ScriptBundle("~/bundles/myscript").Include(
                         "~/Scripts/myscript.js"
                         ));
 

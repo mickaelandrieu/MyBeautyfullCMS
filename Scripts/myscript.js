@@ -11,8 +11,9 @@
 $("#createForm").click(function () {
     $.ajax({
         type: "GET",
-        url: 'http://untest.apphb.com/article/Create',
+        url: 'http://untest.apphb.com/Article/Create',
     }).done(function (response) {
+        $('#createArticleForm').empty();
         $('#createArticleForm').append(response);
     }
     );
