@@ -16,7 +16,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /Article/
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View(db.Articles.ToList());
@@ -24,7 +24,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /Article/Details/5
-
+        [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
             Article article = db.Articles.Find(id);
@@ -37,7 +37,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /Article/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -46,7 +46,7 @@ namespace Todo.Site.Controllers
         //
         // POST: /Article/Create
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public ActionResult Create(Article article)
         {
             if (ModelState.IsValid)
@@ -61,7 +61,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /Article/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             Article article = db.Articles.Find(id);
@@ -75,7 +75,7 @@ namespace Todo.Site.Controllers
         //
         // POST: /Article/Edit/5
 
-        [HttpPost]
+        [HttpPost, Authorize]
         public ActionResult Edit(Article article)
         {
             if (ModelState.IsValid)
@@ -89,7 +89,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /Article/Delete/5
-
+        [Authorize]
         public ActionResult Delete(int id = 0)
         {
             Article article = db.Articles.Find(id);
@@ -103,7 +103,7 @@ namespace Todo.Site.Controllers
         //
         // POST: /Article/Delete/5
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete"), Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Article article = db.Articles.Find(id);
@@ -118,6 +118,7 @@ namespace Todo.Site.Controllers
             base.Dispose(disposing);
         }
 
+        [AllowAnonymous]
         public ActionResult List()
         {
             var articles = db.Articles
@@ -129,6 +130,7 @@ namespace Todo.Site.Controllers
             return View(articles);
         }
 
+        [AllowAnonymous]
         public ActionResult ListJson()
         {
             return Json(db.Articles.ToList(), JsonRequestBehavior.AllowGet);

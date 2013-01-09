@@ -15,7 +15,7 @@ namespace Todo.Site.Controllers
 {
     public class HomeController : Controller
     {
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.Message = "Application ASP.NET MVC 4 couplé au framework CSS MetroUI";
@@ -23,6 +23,7 @@ namespace Todo.Site.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Votre page de description d’application.";
@@ -30,6 +31,7 @@ namespace Todo.Site.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Ceci est une page de contact.";
