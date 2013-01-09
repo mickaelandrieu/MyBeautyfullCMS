@@ -11,7 +11,7 @@ namespace Todo.Site.Models
     public class UsersContext : DbContext
     {
         public UsersContext()
-            : base("DefaultConnection")
+            : base("Models_")
         {
         }
 
