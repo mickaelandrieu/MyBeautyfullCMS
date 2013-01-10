@@ -1,0 +1,43 @@
+﻿@model Todo.Site.Models.Page
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Page</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.createdAt)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.createdAt)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

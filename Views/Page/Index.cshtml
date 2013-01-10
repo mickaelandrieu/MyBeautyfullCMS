@@ -1,0 +1,9 @@
+﻿@model Todo.Site.Models.Page
+
+@{
+    ViewBag.Title = "Une page";
+}
+<h1>@Model.title</h1>
+<section ="main-content">
+    @Html.Raw(@Model.content)
+</section>
