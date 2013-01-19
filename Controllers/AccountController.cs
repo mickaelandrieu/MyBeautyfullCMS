@@ -13,10 +13,12 @@ using Todo.Site.Models;
 
 namespace Todo.Site.Controllers
 {
+
     [Authorize]
     [InitializeSimpleMembership]
     public class AccountController : Controller
     {
+        private BlogContext db = new BlogContext();
         //
         // GET: /Account/Login
 
@@ -326,6 +328,11 @@ namespace Todo.Site.Controllers
 
             ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        }
+
+        public ActionResult ViewAll()
+        {
+            return View(db.UserProfiles.ToList());
         }
 
         #region Applications auxiliaires

@@ -11,12 +11,20 @@
 $("#createForm").click(function () {
     $.ajax({
         type: "GET",
-        url: 'http://untest.apphb.com/Article/Create',
+        url: 'http://'+document.location.hostname+':'+document.location.port+'/Article/Create',
     }).done(function (response) {
-        $('#createArticleForm').empty();
-        $('#createArticleForm').append(response);
+        $('#createArticleForm').empty().append(response);
     }
     );
 });
 
-/* appel de la validation d'un article : création d'un article */
+/* appel à la création d'une page */
+$("#createPageForm").click(function () {
+    $.ajax({
+        type: "GET",
+        url: 'http://'+document.location.hostname+':'+document.location.port+'/Page/Create',
+    }).done(function (response) {
+        $('#displayPageForm').empty().append(response);
+    }
+    );
+});

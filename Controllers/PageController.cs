@@ -86,7 +86,7 @@ namespace Todo.Site.Controllers
             {
                 db.Entry(page).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", page);
             }
             return View(page);
         }
@@ -113,7 +113,7 @@ namespace Todo.Site.Controllers
             Page page = db.Pages.Find(id);
             db.Pages.Remove(page);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         protected override void Dispose(bool disposing)
@@ -129,6 +129,11 @@ namespace Todo.Site.Controllers
         public ActionResult DisplayHeaderMenu()
         {
             return PartialView(db.Pages.ToList());
+        }
+
+        public ActionResult List()
+        {
+            return View(db.Pages.ToList());
         }
     }
 }
