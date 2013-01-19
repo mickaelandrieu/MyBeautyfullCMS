@@ -5,6 +5,8 @@ using System.Threading;
 using System.Web.Mvc;
 using WebMatrix.WebData;
 using Todo.Site.Models;
+using System.Web.Security;
+using System.Linq;
 
 namespace Todo.Site.Filters
 {
@@ -38,7 +40,27 @@ namespace Todo.Site.Filters
                         }
                     }
 
-                    WebSecurity.InitializeDatabaseConnection("Models_", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection(
+                        "Models_",
+                        "UserProfile",
+                        "UserId",
+                        "UserName", autoCreateTables: true
+                    );
+
+                    if (!Roles.RoleExists("Administrator"))
+                        Roles.CreateRole("Administrator");
+
+                    if (!Roles.RoleExists("Publisher"))
+                        Roles.CreateRole("Publisher");
+
+                    if (!WebSecurity.UserExists("admin"))
+                        WebSecurity.CreateUserAndAccount(
+                            "admin",
+                            "admin"
+                     );
+
+                    if (!Roles.GetRolesForUser("admin").Contains("Administrator"))
+                        Roles.AddUsersToRoles(new[] { "admin" }, new[] { "Administrator" });
                 }
                 catch (Exception ex)
                 {

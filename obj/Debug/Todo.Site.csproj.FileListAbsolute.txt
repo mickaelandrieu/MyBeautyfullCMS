@@ -60,6 +60,4 @@ c:\users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\bi
 c:\users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\bin\fr\WebMatrix.WebData.resources.dll
 c:\users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\obj\Debug\Todo.Site.dll
 c:\users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\obj\Debug\Todo.Site.pdb
-C:\Users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\obj\Debug\Todo.Site.Migrations.InitialCreate.resources
-C:\Users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\obj\Debug\Todo.Site.csproj.GenerateResource.Cache
 C:\Users\mickael.andrieu\documents\visual studio 2012\Projects\Todo\Todo.Site\obj\Debug\Todo.Site.csprojResolveAssemblyReference.cache
