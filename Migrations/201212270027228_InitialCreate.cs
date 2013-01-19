@@ -19,12 +19,24 @@ namespace Todo.Site.Migrations
                         status = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            CreateTable(
+             "dbo.Pages",
+             c => new
+             {
+                 Id = c.Int(nullable: false, identity: true),
+                 createdAt = c.DateTime(nullable: false),
+                 title = c.String(nullable: false, maxLength: 4000),
+                 content = c.String(nullable: false, maxLength: 4000),
+                 status = c.Boolean(nullable: false),
+             })
+             .PrimaryKey(t => t.Id);
             
         }
         
         public override void Down()
         {
             DropTable("dbo.Articles");
+            DropTable("dbo.Pages");
         }
     }
 }
