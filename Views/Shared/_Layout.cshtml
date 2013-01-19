@@ -35,6 +35,10 @@
                         {
                             <li>@Html.ActionLink("Gestion des Articles", "Index", "Article")</li>
                         }
+                        @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Gestion des Pages", "List", "Page")</li>
+                        }
                         @Html.Action("DisplayHeaderMenu", "Page");
 
                         <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->

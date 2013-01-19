@@ -14,9 +14,6 @@
 
         @Html.HiddenFor(model => model.Id)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.createdAt)
-        </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.createdAt)
             @Html.ValidationMessageFor(model => model.createdAt)
@@ -34,7 +31,7 @@
             @Html.LabelFor(model => model.content)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.content)
+            @Html.TextAreaFor(model => model.content, new { @class = "span10" })
             @Html.ValidationMessageFor(model => model.content)
         </div>
 
