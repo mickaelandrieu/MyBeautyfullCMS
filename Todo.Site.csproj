@@ -178,7 +178,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
-    <Compile Include="Models\BlogModels.cs" />
+    <Compile Include="Models\BlogContext.cs" />
     <Compile Include="Models\StaticPageModels.cs" />
     <Compile Include="Models\TagModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
