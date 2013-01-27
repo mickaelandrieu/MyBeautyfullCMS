@@ -23,7 +23,7 @@ namespace Todo.Site.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlogContext, DbMigrationsConfiguration<Todo.Site.Models.BlogContext>>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BlogContext, Configuration>());
         }
 
     }

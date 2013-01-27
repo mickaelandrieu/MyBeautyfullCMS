@@ -11,6 +11,7 @@ using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
 
+
 namespace Todo.Site
 {
     // Remarque : pour obtenir des instructions sur l'activation du mode classique IIS6 ou IIS7, 

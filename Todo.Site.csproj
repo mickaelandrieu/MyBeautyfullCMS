@@ -179,6 +179,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Models\BlogContext.cs" />
+    <Compile Include="Models\Configuration.cs" />
     <Compile Include="Models\StaticPageModels.cs" />
     <Compile Include="Models\TagModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -309,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Persistence\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
