@@ -5,22 +5,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 
 namespace Todo.Site.Models
 {
-    [Table("Page")]
-    public class Page
+    [Table("StaticPage")]
+    public class StaticPage
     {
 
-        public Page()
+        public StaticPage()
         {
             this.createdAt = DateTime.Now;
         }
         [Required(ErrorMessage = "Merci de remplir le formulaire")]
         [Key]
-        public int Id { get; set; }
+        public int PageId { get; set; }
         [Display(Name = "Date de création")]
         public DateTime createdAt { get; set; }
         [Required]

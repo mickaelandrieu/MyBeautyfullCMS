@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
+using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using WebMatrix.WebData;
+using Todo.Site.Filters;
 using Todo.Site.Models;
+using System.Data;
+using System.Data.Entity;
 
 namespace Todo.Site.Controllers
 {
+    [InitializeSimpleMembership]
     public class ArticleController : Controller
     {
         private BlogContext db = new BlogContext();
@@ -39,6 +44,8 @@ namespace Todo.Site.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            ViewBag.UserId = WebSecurity.GetUserId(User.Identity.Name);
+            ViewBag.TagId = new SelectList(db.Tags, "TagId", "title");
             return View();
         }
 
@@ -54,7 +61,7 @@ namespace Todo.Site.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.TagId = new SelectList(db.Tags, "TagId", "title", article.TagId);
             return View(article);
         }
 

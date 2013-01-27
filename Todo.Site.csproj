@@ -165,20 +165,22 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\StaticPageController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201301192046577_migration.cs" />
-    <Compile Include="Migrations\201301192046577_migration.Designer.cs">
-      <DependentUpon>201301192046577_migration.cs</DependentUpon>
+    <Compile Include="Migrations\201301261852392_migration.cs" />
+    <Compile Include="Migrations\201301261852392_migration.Designer.cs">
+      <DependentUpon>201301261852392_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Models\BlogModels.cs" />
-    <Compile Include="Models\PageModels.cs" />
+    <Compile Include="Models\StaticPageModels.cs" />
+    <Compile Include="Models\TagModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -291,14 +293,19 @@
     <Content Include="Views\Article\Delete.cshtml" />
     <Content Include="Views\Shared\_createFormLayout.cshtml" />
     <Content Include="Views\Article\List.cshtml" />
-    <Content Include="Views\Page\Index.cshtml" />
-    <Content Include="Views\Page\Details.cshtml" />
-    <Content Include="Views\Page\Create.cshtml" />
-    <Content Include="Views\Page\Edit.cshtml" />
-    <Content Include="Views\Page\Delete.cshtml" />
-    <Content Include="Views\Page\DisplayHeaderMenu.cshtml" />
-    <Content Include="Views\Page\List.cshtml" />
+    <Content Include="Views\StaticPage\Index.cshtml" />
+    <Content Include="Views\StaticPage\Details.cshtml" />
+    <Content Include="Views\StaticPage\Create.cshtml" />
+    <Content Include="Views\StaticPage\Edit.cshtml" />
+    <Content Include="Views\StaticPage\Delete.cshtml" />
+    <Content Include="Views\StaticPage\DisplayHeaderMenu.cshtml" />
+    <Content Include="Views\StaticPage\List.cshtml" />
     <Content Include="Views\Account\ViewAll.cshtml" />
+    <Content Include="Views\Tag\Index.cshtml" />
+    <Content Include="Views\Tag\Details.cshtml" />
+    <Content Include="Views\Tag\Create.cshtml" />
+    <Content Include="Views\Tag\Edit.cshtml" />
+    <Content Include="Views\Tag\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -307,8 +314,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201301192046577_migration.resx">
-      <DependentUpon>201301192046577_migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201301261852392_migration.resx">
+      <DependentUpon>201301261852392_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

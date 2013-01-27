@@ -37,9 +37,9 @@
                         }
                         @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("Gestion des Pages", "List", "Page")</li>
+                            <li>@Html.ActionLink("Gestion des Pages", "List", "StaticPage")</li>
                         }
-                        @Html.Action("DisplayHeaderMenu", "Page");
+                        @Html.Action("DisplayHeaderMenu", "StaticPage");
 
                         <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                       </ul>

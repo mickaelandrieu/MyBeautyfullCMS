@@ -9,7 +9,7 @@ using Todo.Site.Models;
 
 namespace Todo.Site.Controllers
 {
-    public class PageController : Controller
+    public class StaticPageController : Controller
     {
         private BlogContext db = new BlogContext();
 
@@ -18,7 +18,7 @@ namespace Todo.Site.Controllers
 
         public ActionResult Index(int id = 0)
         {
-            Page page = db.Pages.Find(id);
+            StaticPage page = db.StaticPages.Find(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -31,7 +31,7 @@ namespace Todo.Site.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Page page = db.Pages.Find(id);
+            StaticPage page = db.StaticPages.Find(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -51,11 +51,11 @@ namespace Todo.Site.Controllers
         // POST: /Page/Create
 
         [HttpPost]
-        public ActionResult Create(Page page)
+        public ActionResult Create(StaticPage page)
         {
             if (ModelState.IsValid)
             {
-                db.Pages.Add(page);
+                db.StaticPages.Add(page);
                 db.SaveChanges();
                 return RedirectToAction("Index", page);
             }
@@ -68,7 +68,7 @@ namespace Todo.Site.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Page page = db.Pages.Find(id);
+            StaticPage page = db.StaticPages.Find(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -80,7 +80,7 @@ namespace Todo.Site.Controllers
         // POST: /Page/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Page page)
+        public ActionResult Edit(StaticPage page)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace Todo.Site.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Page page = db.Pages.Find(id);
+            StaticPage page = db.StaticPages.Find(id);
             if (page == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace Todo.Site.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Page page = db.Pages.Find(id);
-            db.Pages.Remove(page);
+            StaticPage page = db.StaticPages.Find(id);
+            db.StaticPages.Remove(page);
             db.SaveChanges();
             return RedirectToAction("Index","Home");
         }
@@ -128,12 +128,12 @@ namespace Todo.Site.Controllers
         [AllowAnonymous]
         public ActionResult DisplayHeaderMenu()
         {
-            return PartialView(db.Pages.ToList());
+            return PartialView(db.StaticPages.ToList());
         }
 
         public ActionResult List()
         {
-            return View(db.Pages.ToList());
+            return View(db.StaticPages.ToList());
         }
     }
 }

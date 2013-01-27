@@ -36,7 +36,7 @@
             @Html.LabelFor(model => model.content)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.content, new { @class = "span10" })
+            @Html.TextAreaFor(model => model.content, new { @class = "span5" })
             @Html.ValidationMessageFor(model => model.content)
         </div>
 
@@ -47,6 +47,16 @@
             @Html.EditorFor(model => model.status)
             @Html.ValidationMessageFor(model => model.status)
         </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TagId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TagId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TagId)
+        </div>
+           @Html.Hidden("UserId")
+
         </div>
 <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Retour</button>

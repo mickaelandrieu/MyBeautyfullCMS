@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Todo.Site.Models.UserProfile>
+@{
+    ViewBag.Title = "ViewAll";
+}
+
+<h2>ViewAll</h2>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.UserName
+        </td>
+    </tr>
+}

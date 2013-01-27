@@ -11,7 +11,7 @@ namespace Todo.Site.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201301192046577_migration"; }
+            get { return "201301261852392_migration"; }
         }
         
         string IMigrationMetadata.Source

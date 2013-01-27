@@ -10,7 +10,7 @@
 @foreach (var item in Model) {
     <article class="row span3">
         <h3>
-            <a href="@Url.Action("Details","Article", new { id=item.Id })">@Html.DisplayFor(modelItem => item.title)</a>
+            <a href="@Url.Action("Details","Article", new { id=item.ArticleId })">@Html.DisplayFor(modelItem => item.title)</a>
             
             
         </h3>
@@ -21,7 +21,7 @@
         <p><strong>
             @Html.DisplayFor(modelItem => item.introduction)
         </strong></p>
-            <a href="@Url.Action("Details","Article", new { id=item.Id })" class="article-more-info">En savoir plus >></a>
+            <a href="@Url.Action("Details","Article", new { id = item.ArticleId })" class="article-more-info">En savoir plus >></a>
     </article>
 }
 </section>

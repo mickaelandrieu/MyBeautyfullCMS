@@ -1,20 +1,23 @@
-﻿@model Todo.Site.Models.Page
+﻿@model Todo.Site.Models.StaticPage
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
-@{
-    Layout = "~/Views/Shared/_createFormLayout.cshtml";
-}
-<div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Création d'un nouvel Article</h3>
 
-</div>
+<h2>Edit</h2>
+
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-    <div class="modal-body">
-        <h3>Page</h3>
+
+    <fieldset>
+        <legend>Page</legend>
+
+        @Html.HiddenFor(model => model.PageId)
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.createdAt)
+            @Html.ValidationMessageFor(model => model.createdAt)
+        </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.title)
@@ -39,11 +42,17 @@
             @Html.EditorFor(model => model.status)
             @Html.ValidationMessageFor(model => model.status)
         </div>
-    </div>
 
-       <div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">Retour</button>
-    <input type="submit" value="Créer la page" class="btn btn-primary">
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
 </div>
-    
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

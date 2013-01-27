@@ -18,7 +18,8 @@ namespace Todo.Site.Models
 
         public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<Article> Articles { get; set; }
-        public DbSet<Page> Pages { get; set; }
+        public DbSet<StaticPage> StaticPages { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
