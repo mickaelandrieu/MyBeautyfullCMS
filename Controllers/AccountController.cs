@@ -8,14 +8,12 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using Todo.Site.Filters;
 using Todo.Site.Models;
 
 namespace Todo.Site.Controllers
 {
 
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         private BlogContext db = new BlogContext();
