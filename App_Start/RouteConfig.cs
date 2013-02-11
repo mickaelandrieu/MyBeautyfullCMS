@@ -13,18 +13,13 @@ namespace Todo.Site
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
                 name: "Home",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Article", action = "List", id = UrlParameter.Optional }
             );
-            /*
-            routes.MapRoute(
-                name: "Default",
-                url: "{*catchall}",
-                defaults: new { controller = "Home", action = "InsertClients", id = UrlParameter.Optional }
-                );
-             */
+           
         }
     }
 }

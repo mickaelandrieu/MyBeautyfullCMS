@@ -60,7 +60,7 @@ namespace Todo.Site.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TagId = new SelectList(db.Tags, "TagId", "title", article.TagId);
+            ViewBag.TagId = new SelectList(db.Tags, "TagId", "title");
             return View(article);
         }
 
@@ -87,7 +87,7 @@ namespace Todo.Site.Controllers
             {
                 db.Entry(article).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details", new { id = article.ArticleId });
             }
             return View(article);
         }

@@ -41,8 +41,8 @@
             @Html.DisplayFor(modelItem => item.status)
         </td>
         <td>
-            <a href="@Url.Action("Edit", item)"><i class="icon-pencil" title="Editer l'Article"></i></a>
-            <a href="@Url.Action("Details", item)"><i class="icon-eye-open" title="Voir l'Article"></i></a>
+            <a href="@Url.Action("Edit" , new { id = @item.PageId })"><i class="icon-pencil" title="Editer l'Article"></i></a>
+            <a href="@Url.Action("Details" , new { id = @item.PageId })"><i class="icon-eye-open" title="Voir l'Article"></i></a>
             <a href="@Url.Action("Delete", item)"><i class="icon-trash" title="Supprimer l'Article"></i></a>
         </td>
     </tr>

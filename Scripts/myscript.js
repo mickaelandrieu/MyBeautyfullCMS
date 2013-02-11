@@ -22,7 +22,7 @@ $("#createForm").click(function () {
 $("#createPageForm").click(function () {
     $.ajax({
         type: "GET",
-        url: 'http://'+document.location.hostname+':'+document.location.port+'/Page/Create',
+        url: 'http://'+document.location.hostname+':'+document.location.port+'/StaticPage/Create',
     }).done(function (response) {
         $('#displayPageForm').empty().append(response);
     }

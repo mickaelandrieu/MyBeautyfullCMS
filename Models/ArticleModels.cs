@@ -16,8 +16,8 @@ namespace Todo.Site.Models
         public Article()
         { 
             this.createdAt = DateTime.Now;
-           // this.User = Page.CurrentUser;
         }
+
         [Required(ErrorMessage = "Merci de remplir le formulaire")]
         [Key]
         public int ArticleId { get; set; }
@@ -38,16 +38,18 @@ namespace Todo.Site.Models
         [Display(Name = "Activer l'article ?")]
         public Boolean status { get; set; }
 
-        [Display(Name = "Associer un Tag")]
-        public int TagId { get; set; }
-
         public int UserId { get; set; }
 
-        [ForeignKey("TagId")]
-        public Tag Tag { get; set; }
+        [Display(Name = "Sélectionner un tag")]
+        public int TagId { get; set; }
+
+        public List<Comment> Comments { get; set; }
 
         [ForeignKey("UserId")]
         public UserProfile User { get; set; }
+
+        [ForeignKey("TagId")]
+        public Tag Tag { get; set; }
     }
 
 }

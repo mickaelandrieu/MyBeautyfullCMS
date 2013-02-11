@@ -57,7 +57,7 @@ namespace Todo.Site.Controllers
             {
                 db.StaticPages.Add(page);
                 db.SaveChanges();
-                return RedirectToAction("Index", page);
+                return RedirectToAction("List");
             }
 
             return View(page);
@@ -86,7 +86,7 @@ namespace Todo.Site.Controllers
             {
                 db.Entry(page).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index", page);
+                return RedirectToAction("List");
             }
             return View(page);
         }

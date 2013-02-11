@@ -35,10 +35,18 @@
             @Html.TextAreaFor(model => model.content, new { @class = "span10" })
             @Html.ValidationMessageFor(model => model.content)
         </div>
-
-         <label class="checkbox">
-            <input type="checkbox"> Activer le Post ?
-        </label>
+        <div>
+            @Html.DropDownList("TagId", ViewBag.Tags as IEnumerable<SelectListItem>, null, new { multiple = "multiple", size = "5" })
+            @Html.ValidationMessageFor(model => model.TagId)
+        </div>
+         @Html.Hidden("UserId")
+        <div class="editor-label">
+            @Html.LabelFor(model => model.status)
+        </div>
+        <div class="editor-field checkox">
+            @Html.CheckBoxFor(model => model.status)
+        </div>
+           
         <div class="editor-field">
             @Html.ValidationMessageFor(model => model.status)
         </div>
