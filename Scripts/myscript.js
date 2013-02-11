@@ -7,7 +7,7 @@
 
 
 
-/* appel à la création d'un article */
+/* appel ï¿½ la crï¿½ation d'un article */
 $("#createForm").click(function () {
     $.ajax({
         type: "GET",
@@ -18,7 +18,7 @@ $("#createForm").click(function () {
     );
 });
 
-/* appel à la création d'une page */
+/* appel ï¿½ la crï¿½ation d'une page */
 $("#createPageForm").click(function () {
     $.ajax({
         type: "GET",

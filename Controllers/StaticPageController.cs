@@ -14,7 +14,7 @@ namespace Todo.Site.Controllers
         private BlogContext db = new BlogContext();
 
         //
-        // GET: /Page/
+        // GET: /StaticPage/
 
         public ActionResult Index(int id = 0)
         {
@@ -27,7 +27,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // GET: /Page/Details/5
+        // GET: /StaticPage/Details/5
 
         public ActionResult Details(int id = 0)
         {
@@ -40,7 +40,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // GET: /Page/Create
+        // GET: /StaticPage/Create
 
         public ActionResult Create()
         {
@@ -48,7 +48,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // POST: /Page/Create
+        // POST: /StaticPage/Create
 
         [HttpPost]
         public ActionResult Create(StaticPage page)
@@ -64,7 +64,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // GET: /Page/Edit/5
+        // GET: /StaticPage/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -92,7 +92,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // GET: /Page/Delete/5
+        // GET: /StaticPage/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -105,7 +105,7 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // POST: /Page/Delete/5
+        // POST: /StaticPage/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

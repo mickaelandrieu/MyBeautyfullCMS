@@ -5,5 +5,5 @@
 }
 
 @foreach (var item in Model) {
-   <li> <a href="@Url.Action("Index","Page", new { id=item.PageId })">@Html.DisplayFor(modelItem => item.title)</a></li>
+   <li> <a href="@Url.Action("Index","StaticPage", new { id=item.PageId })">@Html.DisplayFor(modelItem => item.title)</a></li>
 }
