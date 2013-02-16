@@ -13,8 +13,12 @@ namespace Todo.Site.Models
     {
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Id Utilisateur")]
         public int UserId { get; set; }
+        [Display(Name = "Nom d'utilisateur")]
         public string UserName { get; set; }
+        [Display(Name = "Niveau de Droit")]
+        public string UserLevel { get; set; }   
     }
 
     public class RegisterExternalLoginModel

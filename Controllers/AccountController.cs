@@ -80,6 +80,7 @@ namespace Todo.Site.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    Roles.AddUsersToRoles(new[] { model.UserName }, new[] { "User" });
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

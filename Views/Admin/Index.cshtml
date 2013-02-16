@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Todo.Site.Models.UserProfile>
+
+@{
+    ViewBag.Title = "Gestion des utilisateurs";
+}
+
+<table class="table table-stripped table-bordered span10">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.UserLevel)
+            </th>
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @foreach (var test in Roles.GetRolesForUser(item.UserName))
+            {
+                @Html.DisplayFor(modelItem => test)
+                <br />
+            }
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", new { id = @item.UserId })"><i class="icon-pencil" title="Editer l'utilisateur"></i></a>
+        </td>
+        <td>
+            <a href="@Url.Action("Delete", new { id = @item.UserId })"><i class="icon-trash" title="Supprimer l'utilisateur"></i></a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>
