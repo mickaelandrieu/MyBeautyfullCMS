@@ -52,7 +52,7 @@ namespace Todo.Site.Controllers
                 }
                 
             }
-
+           
             ViewBag.UserId = user.UserId;
             ViewBag.UserName = user.UserName;
             ViewBag.Level = items;
@@ -67,7 +67,17 @@ namespace Todo.Site.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                if (user.UserLevel == "Administrator")
+                {
+                    if (Roles.GetUsersInRole("Administrator").Length > 1)
+                    {
+                        db.Entry(user).State = EntityState.Modified;
+                    }
+                }
+                else
+                {
+                    db.Entry(user).State = EntityState.Modified;
+                }
                 db.SaveChanges();
                 return RedirectToAction("Edit", new { id = user.UserId });
             }
@@ -94,12 +104,23 @@ namespace Todo.Site.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             UserProfile user = db.UserProfiles.Find(id);
-            foreach (var level in Roles.GetRolesForUser(user.UserName))
+            Boolean plusieur = false;
+            if (user.UserLevel == "Administrator")
             {
-                Roles.RemoveUserFromRole(user.UserName, level);
+                if (Roles.GetUsersInRole("Administrator").Length > 1)
+                {
+                    plusieur = true;
+                }
             }
-            db.UserProfiles.Remove(user);
-            db.SaveChanges();
+            if (!plusieur)
+            {
+                foreach (var level in Roles.GetRolesForUser(user.UserName))
+                {
+                    Roles.RemoveUserFromRole(user.UserName, level);
+                }
+                db.UserProfiles.Remove(user);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
     }
