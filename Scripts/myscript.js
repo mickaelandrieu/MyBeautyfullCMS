@@ -7,7 +7,7 @@
 
 
 
-/* appel � la cr�ation d'un article */
+/* appel a la creation d'un article */
 $("#createForm").click(function () {
     $.ajax({
         type: "GET",
@@ -18,7 +18,7 @@ $("#createForm").click(function () {
     );
 });
 
-/* appel � la cr�ation d'une page */
+/* appel a la cr�aeion d'une page */
 $("#createPageForm").click(function () {
     $.ajax({
         type: "GET",

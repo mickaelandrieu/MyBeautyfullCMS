@@ -29,16 +29,16 @@
                     <div class="nav-collapse collapse">
                       <ul class="nav">
                         <li class="active">@Html.ActionLink("Articles", "List", "Article")</li>
-                        <li>@Html.ActionLink("À propos de", "About", "Home")</li>
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                         {
                             <li>@Html.ActionLink("Gestion des Articles", "Index", "Article")</li>
                             <li>@Html.ActionLink("Gestion des Tags", "Index", "Tag")</li>
-                        }
-                        @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
-                        {
                             <li>@Html.ActionLink("Gestion des Pages", "List", "StaticPage")</li>
+                            
+                        }
+                        @if (ViewContext.HttpContext.User.IsInRole("Administrator"))
+                        {
+                            <li>@Html.ActionLink("Gestion des Users", "Index", "Admin")</li>
                         }
                         @Html.Action("DisplayHeaderMenu", "StaticPage");
 

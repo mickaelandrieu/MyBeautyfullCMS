@@ -82,7 +82,7 @@ namespace Todo.Site.Controllers
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
                     Roles.AddUsersToRoles(new[] { model.UserName }, new[] { "User" });
                     WebSecurity.Login(model.UserName, model.Password);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("List", "Article");
                 }
                 catch (MembershipCreateUserException e)
                 {
@@ -343,7 +343,7 @@ namespace Todo.Site.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("List", "Article");
             }
         }
 

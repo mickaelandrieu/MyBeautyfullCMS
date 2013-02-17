@@ -49,7 +49,7 @@
         <td>
             <a href="@Url.Action("Edit", new { id = @item.ArticleId })"><i class="icon-pencil" title="Editer l'Article"></i></a>
             <a href="@Url.Action("Details", new { id = @item.ArticleId })"><i class="icon-eye-open" title="Voir l'Article"></i></a>
-            <a href="@Url.Action("Delete", item)"><i class="icon-trash" title="Supprimer l'Article"></i></a>
+            <a href="@Url.Action("Delete" , new { id = @item.ArticleId })"><i class="icon-trash" title="Supprimer l'Article"></i></a>
         </td>
     </tr>
 }

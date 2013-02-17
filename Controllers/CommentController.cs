@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Transactions;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Security;
-using WebMatrix.WebData;
-using Todo.Site.Models;
 using System.Data;
 using System.Data.Entity;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using Todo.Site.Models;
 
 namespace Todo.Site.Controllers
 {
@@ -21,7 +18,7 @@ namespace Todo.Site.Controllers
 
         public ActionResult Index()
         {
-            var comments = db.Comments.Include(c => c.User);
+            var comments = db.Comments.Include(c => c.Article);
             return View(comments.ToList());
         }
 
@@ -41,10 +38,9 @@ namespace Todo.Site.Controllers
         //
         // GET: /Comment/Create
 
-        public ActionResult Create(int ArticleId)
+        public ActionResult Create()
         {
-            ViewBag.UserId = WebSecurity.GetUserId(User.Identity.Name);
-            ViewBag.ArticleId = ArticleId;
+            ViewBag.ArticleId = new SelectList(db.Articles, "ArticleId", "title");
             return View();
         }
 
@@ -60,6 +56,8 @@ namespace Todo.Site.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.ArticleId = new SelectList(db.Articles, "ArticleId", "title", comment.ArticleId);
             return View(comment);
         }
 
@@ -73,7 +71,7 @@ namespace Todo.Site.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", comment.UserId);
+            ViewBag.ArticleId = new SelectList(db.Articles, "ArticleId", "title", comment.ArticleId);
             return View(comment);
         }
 
@@ -89,7 +87,7 @@ namespace Todo.Site.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.UserId = new SelectList(db.UserProfiles, "UserId", "UserName", comment.UserId);
+            ViewBag.ArticleId = new SelectList(db.Articles, "ArticleId", "title", comment.ArticleId);
             return View(comment);
         }
 

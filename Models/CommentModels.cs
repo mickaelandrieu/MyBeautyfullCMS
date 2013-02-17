@@ -16,6 +16,7 @@ namespace Todo.Site.Models
         public Comment()
         { 
             this.createdAt = DateTime.Now;
+            this.status = false;
         }
 
         [Required(ErrorMessage = "Merci de remplir le formulaire")]
@@ -27,15 +28,17 @@ namespace Todo.Site.Models
         [Required]
         [Display(Name = "Valider le commentaire ?")]
         public Boolean status { get; set; }
+        [Required]
+        public string author;
 
         [Required]
         [Display(Name = "Votre commentaire")]
         public String content { get; set; }
 
-        public int UserId { get; set; }
+        public int ArticleId { get; set; }
 
-        [ForeignKey("UserId")]
-        public UserProfile User { get; set; }
+        [ForeignKey("ArticleId")]
+        public Article Article { get; set; }
 
     }
 }

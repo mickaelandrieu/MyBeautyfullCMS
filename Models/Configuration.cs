@@ -17,22 +17,41 @@ namespace Todo.Site.Models
 
         protected override void Seed(Todo.Site.Models.BlogContext context)
         {
-            WebSecurity.InitializeDatabaseConnection("Models_", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            try
+            {
+                WebSecurity.InitializeDatabaseConnection("Models_", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+            }
+            catch(System.Exception ex)
+            {
+
+            }
 
             if (!Roles.RoleExists("Administrator"))
             {
                 Roles.CreateRole("Administrator");
             }
+                if (!WebSecurity.UserExists("administrateur"))
+                {
+                    WebSecurity.CreateUserAndAccount("administrateur", "secret");
+                }
 
-            if (!WebSecurity.UserExists("john"))
+                if (!Roles.GetRolesForUser("administrateur").Contains("Administrator"))
+                {
+                    Roles.AddUsersToRoles(new[] { "administrateur" }, new[] { "Administrator" });
+                }
+            if (!Roles.RoleExists("Publisher"))
             {
-                WebSecurity.CreateUserAndAccount("john", "secret");
+                Roles.CreateRole("Publisher");
             }
+                if (!WebSecurity.UserExists("editeur"))
+                {
+                    WebSecurity.CreateUserAndAccount("editeur", "editeur");
+                }
 
-            if (!Roles.GetRolesForUser("john").Contains("Administrator"))
-            {
-                Roles.AddUsersToRoles(new[] { "john" }, new[] { "Administrator" });
-            }
+                if (!Roles.GetRolesForUser("editeur").Contains("Publisher"))
+                {
+                    Roles.AddUsersToRoles(new[] { "editeur" }, new[] { "Publisher" });
+                }
         }
     }
 }
