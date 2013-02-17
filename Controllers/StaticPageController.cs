@@ -113,7 +113,7 @@ namespace Todo.Site.Controllers
             StaticPage page = db.StaticPages.Find(id);
             db.StaticPages.Remove(page);
             db.SaveChanges();
-            return RedirectToAction("Index","Home");
+            return RedirectToAction("List","Article");
         }
 
         protected override void Dispose(bool disposing)
