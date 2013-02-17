@@ -77,7 +77,7 @@ namespace Todo.Site.Controllers
         [HttpPost]
         public ActionResult Edit(Tag tag)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && tag.title != "Non Catégorisé")
             {
                 db.Entry(tag).State = EntityState.Modified;
                 db.SaveChanges();
@@ -91,12 +91,9 @@ namespace Todo.Site.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            if(0 == id)
-            {
-                return RedirectToAction("Index");
-            }
+
             Tag tag = db.Tags.Find(id);
-            if (tag == null)
+            if (tag == null || tag.title == "Non Catégorisé")
             {
                 return HttpNotFound();
             }
