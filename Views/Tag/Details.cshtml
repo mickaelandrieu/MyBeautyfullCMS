@@ -4,19 +4,15 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<fieldset>
-    <legend>Tag</legend>
-
+<section>
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
+        <h3> @Html.DisplayNameFor(model => model.title)</h3>
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.title)
     </div>
-</fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.TagId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+</section>
+<aside>
+    @Html.ActionLink("Editer", "Edit", new { id = Model.TagId }) |
+    @Html.ActionLink("Retour à la liste", "Index")
+</aside>

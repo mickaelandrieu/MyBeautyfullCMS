@@ -1,25 +1,21 @@
 ﻿@model Todo.Site.Models.Tag
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Suppression du tag";
 }
 
-<h2>Delete</h2>
+<h3>Etes vous sûrs de vouloir faire cela ?</h3>
+<p class="label label-inverse">Les articles correspondants seront supprimés !</p>
 
-<h3>Are you sure you want to delete this?</h3>
-<fieldset>
-    <legend>Tag</legend>
-
+<section>
     <div class="display-label">
-         @Html.DisplayNameFor(model => model.title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.title)
-    </div>
-</fieldset>
+         @Html.DisplayNameFor(model => model.title) :   @Html.DisplayFor(model => model.title)
+    </div>     
+</section>
+<br /><br />
 @using (Html.BeginForm()) {
-    <p>
-        <input type="submit" value="Delete" /> |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
+    <aside>
+        <input type="submit" value="Supprimer" class="btn btn-warning" /> |
+        @Html.ActionLink("Retour à la liste", "Index")
+    </aside>
 }
