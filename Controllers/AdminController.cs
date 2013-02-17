@@ -25,19 +25,6 @@ namespace Todo.Site.Controllers
         }
 
         //
-        // GET: /Admin/Details/5
-        [Authorize]
-        public ActionResult Details(int id = 0)
-        {
-            UserProfile user = db.UserProfiles.Find(id);
-            if (user == null)
-            {
-                return HttpNotFound();
-            }
-            return View(user);
-        }
-
-        //
         // GET: /Admin/Edit/5
         [Authorize]
         public ActionResult Edit(int id = 0)
@@ -75,7 +62,6 @@ namespace Todo.Site.Controllers
 
         //
         // POST: /Admin/Edit/5
-
         [HttpPost, Authorize]
         public ActionResult Edit(UserProfile user)
         {
@@ -116,30 +102,5 @@ namespace Todo.Site.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        [AllowAnonymous]
-        public ActionResult List()
-        {
-            var user = db.UserProfiles
-                             .ToList()
-                             .Take(10);
-
-            foreach (var item in user)
-            {
-                if ((!Roles.IsUserInRole(item.UserName, "User")) && (!Roles.IsUserInRole(item.UserName, "Administrator")))
-                {
-                    item.UserLevel = "User";
-                }
-            }
-
-            return View(user);
-        }
-
-        [AllowAnonymous]
-        public ActionResult ListJson()
-        {
-            return Json(db.UserProfiles.ToList(), JsonRequestBehavior.AllowGet);
-        }
-
     }
 }

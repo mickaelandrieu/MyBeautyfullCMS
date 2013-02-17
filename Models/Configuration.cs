@@ -70,6 +70,10 @@ namespace Todo.Site.Models
             {
                 Roles.AddUsersToRoles(new[] { "editeur" }, new[] { "Publisher" });
             }
+            if (!Roles.RoleExists("User"))
+            {
+                Roles.CreateRole("User");
+            }
         }
 
         private List<Tag> seedTags()
