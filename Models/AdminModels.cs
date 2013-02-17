@@ -43,8 +43,6 @@ namespace Todo.Site.Models
         [Display(Name = "Sélectionner un tag")]
         public int TagId { get; set; }
 
-        public List<Comment> Comments { get; set; }
-
         [ForeignKey("UserId")]
         public UserProfile User { get; set; }
 

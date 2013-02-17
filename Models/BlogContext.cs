@@ -19,7 +19,6 @@ namespace Todo.Site.Models
         public DbSet<Article> Articles { get; set; }
         public DbSet<StaticPage> StaticPages { get; set; }
         public DbSet<Tag> Tags { get; set; }
-        public DbSet<Comment> Comments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
