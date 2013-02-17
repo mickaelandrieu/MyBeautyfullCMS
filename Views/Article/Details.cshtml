@@ -8,7 +8,7 @@
 <article class="article article-detail">
     <h2>@Html.DisplayFor(model => model.title)</h2>
     <p class="article-intro">
-       @Html.DisplayFor(model => model.content)
+      Par:  @ViewBag.Authorname
         <br />
         paru le : <time datetime="@Html.DisplayFor(model => model.createdAt)">@Html.DisplayFor(model => model.createdAt)</time>
     </p>

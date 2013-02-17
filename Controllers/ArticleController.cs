@@ -22,7 +22,9 @@ namespace Todo.Site.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
-            return View(db.Articles.ToList());
+            /* jamais vu un framework incapable de faire une jointure 1to1 jusque là */
+            var articles = db.Articles.ToList();
+            return View(articles);
         }
 
         //
@@ -31,6 +33,7 @@ namespace Todo.Site.Controllers
         public ActionResult Details(int id = 0)
         {
             Article article = db.Articles.Find(id);
+            ViewBag.Authorname = db.UserProfiles.Find(article.UserId).UserName;
             if (article == null)
             {
                 return HttpNotFound();
