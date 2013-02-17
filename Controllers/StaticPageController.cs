@@ -15,7 +15,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /StaticPage/
-
+        [AllowAnonymous]
         public ActionResult Index(int id = 0)
         {
             StaticPage page = db.StaticPages.Find(id);
@@ -28,7 +28,7 @@ namespace Todo.Site.Controllers
 
         //
         // GET: /StaticPage/Details/5
-
+        [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
             StaticPage page = db.StaticPages.Find(id);
