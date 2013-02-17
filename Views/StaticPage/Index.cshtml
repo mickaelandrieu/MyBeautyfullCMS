@@ -1,7 +1,7 @@
 ﻿@model Todo.Site.Models.StaticPage
 
 @{
-    ViewBag.Title = "Une page";
+    ViewBag.Title = @Html.DisplayFor(model => model.title);
 }
 <h1>@Model.title</h1>
 <section ="main-content">

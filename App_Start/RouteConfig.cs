@@ -13,9 +13,32 @@ namespace Todo.Site
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "posts",
+                url: "posts/{action}/{id}",
+                defaults: new { controller = "Article", action = "Index", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
-                name: "Home",
+                name: "pages",
+                url: "pages/{action}/{id}",
+                defaults: new { controller = "StaticPage", action = "List", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "tags",
+                url: "tags/{action}/{id}",
+                defaults: new { controller = "Tag", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "users",
+                url: "users/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Article", action = "List", id = UrlParameter.Optional }
             );

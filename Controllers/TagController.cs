@@ -93,9 +93,14 @@ namespace Todo.Site.Controllers
         {
 
             Tag tag = db.Tags.Find(id);
-            if (tag == null || tag.title == "Non Catégorisé")
+            if (tag == null)
             {
                 return HttpNotFound();
+
+            }
+            if(tag.title == "Non Catégorisé")
+            {
+                return RedirectToAction("Index");
             }
             return View(tag);
         }

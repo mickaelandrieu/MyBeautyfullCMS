@@ -3,7 +3,7 @@
     <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta charset="utf-8" />
-        <title>@ViewBag.Title - Mon application ASP.NET MVC</title>
+        <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -28,7 +28,6 @@
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                       <ul class="nav">
-                        <li>@Html.ActionLink("Articles", "List", "Article")</li>
                         @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                         {
                             <li>@Html.ActionLink("Gestion des Articles", "Index", "Article")</li>
