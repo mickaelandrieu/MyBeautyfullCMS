@@ -36,7 +36,7 @@
             @Html.ValidationMessageFor(model => model.content)
         </div>
         <div>
-            @Html.DropDownList("TagId", ViewBag.Tags as IEnumerable<SelectListItem>, null, new { multiple = "multiple", size = "5" })
+            @Html.DropDownList("TagId",ViewBag.Tags as IEnumerable<SelectListItem>, null, new { multiple = "multiple", size = "5" })
             @Html.ValidationMessageFor(model => model.TagId)
         </div>
          @Html.Hidden("UserId")

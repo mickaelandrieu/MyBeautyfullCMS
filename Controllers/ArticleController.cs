@@ -77,6 +77,7 @@ namespace Todo.Site.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.TagId = new SelectList(db.Tags, "TagId", "title");
             return View(article);
         }
 
