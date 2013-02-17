@@ -17,10 +17,7 @@
                 @Html.DisplayNameFor(model => model.UserLevel)
             </th>
             <th>
-                Edit
-            </th>
-            <th>
-                Delete
+                Administration
             </th>
         </tr>
     </thead>
@@ -42,8 +39,6 @@
         </td>
         <td>
             <a href="@Url.Action("Edit", new { id = @item.UserId })"><i class="icon-pencil" title="Editer l'utilisateur"></i></a>
-        </td>
-        <td>
             <a href="@Url.Action("Delete", new { id = @item.UserId })"><i class="icon-trash" title="Supprimer l'utilisateur"></i></a>
         </td>
     </tr>

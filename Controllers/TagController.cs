@@ -91,6 +91,10 @@ namespace Todo.Site.Controllers
 
         public ActionResult Delete(int id = 0)
         {
+            if(0 == id)
+            {
+                return RedirectToAction("Index");
+            }
             Tag tag = db.Tags.Find(id);
             if (tag == null)
             {
