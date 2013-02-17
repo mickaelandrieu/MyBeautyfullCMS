@@ -7,8 +7,9 @@
 
 <article class="article article-detail">
     <h2>@Html.DisplayFor(model => model.title)</h2>
+    <p class="badge badge-info">@ViewBag.TagName</p>
     <p class="article-intro">
-      Par:  @ViewBag.Authorname
+      <span>Par: <b class="badge badge-success">@ViewBag.AuthorName</b>
         <br />
         paru le : <time datetime="@Html.DisplayFor(model => model.createdAt)">@Html.DisplayFor(model => model.createdAt)</time>
     </p>

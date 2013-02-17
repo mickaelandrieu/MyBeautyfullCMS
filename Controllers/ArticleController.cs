@@ -32,8 +32,9 @@ namespace Todo.Site.Controllers
         [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
-            Article article = db.Articles.Find(id);
-            ViewBag.Authorname = db.UserProfiles.Find(article.UserId).UserName;
+            Article article    = db.Articles.Find(id);
+            ViewBag.AuthorName = db.UserProfiles.Find(article.UserId).UserName;
+            ViewBag.TagName    = db.Tags.Find(article.TagId).title;
             if (article == null)
             {
                 return HttpNotFound();

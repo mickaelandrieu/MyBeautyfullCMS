@@ -24,11 +24,11 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="@Url.Action("List","Article")">My Beautifull CMS</a>
+                    <a class="brand active" href="@Url.Action("List","Article")">My Beautifull CMS</a>
                     <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                     <div class="nav-collapse collapse">
                       <ul class="nav">
-                        <li class="active">@Html.ActionLink("Articles", "List", "Article")</li>
+                        <li>@Html.ActionLink("Articles", "List", "Article")</li>
                         @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
                         {
                             <li>@Html.ActionLink("Gestion des Articles", "Index", "Article")</li>
@@ -44,7 +44,7 @@
 
                         <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
                       </ul>
-                        <div style="float: right;">@Html.Partial("_LoginPartial")</div>
+                        <div style="float: right; color: #fff;">@Html.Partial("_LoginPartial")</div>
                     </div><!--/.nav-collapse -->
                   </div><!-- /.navbar-inner -->
                 </div><!-- /.navbar -->
@@ -62,7 +62,7 @@
             </section>
         </section>
         <section class="span2" id="aside-view">
-            <h2>Liste des Pages</h2>
+            <h4>Liste des Pages</h4>
         <!--Sidebar content Ajout des pages statiques en aside -->
             <ul>
                  @Html.Action("DisplayHeaderMenu", "StaticPage");
@@ -73,7 +73,7 @@
            
         
         <footer class="span12">
-            <p>&copy; @DateTime.Now.Year - My Beautifull CMS - développé à l'aide d'ASP.NET MVC</p>
+            <p>&copy; @DateTime.Now.Year - <b>My Beautifull CMS</b> - développé à l'aide d'ASP.NET MVC</p>
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
