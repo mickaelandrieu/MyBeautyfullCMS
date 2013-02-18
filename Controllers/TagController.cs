@@ -5,9 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Todo.Site.Models;
+using MyBeautyfullCMS.Models;
 
-namespace Todo.Site.Controllers
+namespace MyBeautyfullCMS.Controllers
 {
     public class TagController : Controller
     {

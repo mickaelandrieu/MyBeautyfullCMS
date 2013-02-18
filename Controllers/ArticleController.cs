@@ -6,11 +6,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebMatrix.WebData;
-using Todo.Site.Models;
+using MyBeautyfullCMS.Models;
 using System.Data;
 using System.Data.Entity;
 
-namespace Todo.Site.Controllers
+namespace MyBeautyfullCMS.Controllers
 {
 
     public class ArticleController : Controller

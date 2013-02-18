@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 
-namespace Todo.Site.Models
+namespace MyBeautyfullCMS.Models
 {
     [Table("StaticPage")]
     public class StaticPage

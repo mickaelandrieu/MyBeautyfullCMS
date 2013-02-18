@@ -1,12 +1,12 @@
 ﻿using System.Data.Entity.Migrations;
 using WebMatrix.WebData;
-using Todo.Site.Models;
+using MyBeautyfullCMS.Models;
 using System.Web.Security;
 using System.Linq;
 using System.Collections.Generic;
 
 
-namespace Todo.Site.Models
+namespace MyBeautyfullCMS.Models
 {
     public class Configuration : DbMigrationsConfiguration<BlogContext>
     {
@@ -16,7 +16,7 @@ namespace Todo.Site.Models
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(Todo.Site.Models.BlogContext context)
+        protected override void Seed(MyBeautyfullCMS.Models.BlogContext context)
         {
             enableMemberShip();
             if (context.Tags.Count() == 0)

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WebMatrix.WebData;
-using Todo.Site.Models;
+using MyBeautyfullCMS.Models;
 using System.Web.Security;
 using Microsoft.Web.WebPages.OAuth;
 
-namespace Todo.Site
+namespace MyBeautyfullCMS
 {
     public static class AuthConfig
     {

@@ -7,7 +7,7 @@ using System.Data.Entity.Migrations;
 using System.Globalization;
 using System.Web.Security;
 
-namespace Todo.Site.Models
+namespace MyBeautyfullCMS.Models
 {
     public class BlogContext : DbContext
     {

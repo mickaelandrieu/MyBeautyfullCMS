@@ -8,9 +8,9 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using Todo.Site.Models;
+using MyBeautyfullCMS.Models;
 
-namespace Todo.Site.Controllers
+namespace MyBeautyfullCMS.Controllers
 {
 
     [Authorize]
