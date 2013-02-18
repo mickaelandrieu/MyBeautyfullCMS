@@ -1,4 +1,4 @@
-TestViaAppHarbor
+MyBeautyfullCMS
 ================
 
 asp.net mvc project : a simple cms
