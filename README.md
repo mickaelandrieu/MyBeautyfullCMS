@@ -9,3 +9,4 @@ Team
 * Mickaël Andrieu 
 * Clement Brun
 * Daphné Hanus
+* Loan Truong (best graphist I've never seen)
