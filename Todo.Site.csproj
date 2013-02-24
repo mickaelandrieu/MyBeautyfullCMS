@@ -165,6 +165,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\MyBeautyfullCMSController.cs" />
     <Compile Include="Controllers\StaticPageController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
@@ -315,6 +317,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Article\DisplayHeaderMenu.cshtml" />
     <Content Include="Views\Tag\DisplayHeaderMenu.cshtml" />
+    <Content Include="Views\Contact\index.cshtml" />
+    <Content Include="Views\MyBeautyfullCMS\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

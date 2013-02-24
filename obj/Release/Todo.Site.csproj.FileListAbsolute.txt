@@ -94,12 +94,6 @@ C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Si
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\WebMatrix.Data.xml
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\Microsoft.Web.WebPages.OAuth.xml
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\WebMatrix.WebData.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.AspNet.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.Core.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.OpenId.xml
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\EntityFramework.resources.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\System.Net.Http.Formatting.resources.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\System.Web.Helpers.resources.dll
