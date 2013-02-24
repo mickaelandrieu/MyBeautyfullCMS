@@ -17,8 +17,6 @@ namespace MyBeautyfullCMS.Controllers
     {
         private BlogContext db = new BlogContext();
 
-        //
-        // GET: /Article/
         [AllowAnonymous]
         public ActionResult Index()
         {
@@ -27,8 +25,6 @@ namespace MyBeautyfullCMS.Controllers
             return View(articles);
         }
 
-        //
-        // GET: /Article/Details/5
         [AllowAnonymous]
         public ActionResult Details(int id = 0)
         {
@@ -42,8 +38,6 @@ namespace MyBeautyfullCMS.Controllers
             return View(article);
         }
 
-        //
-        // GET: /Article/Create
         [Authorize]
         public ActionResult Create()
         {
@@ -51,9 +45,6 @@ namespace MyBeautyfullCMS.Controllers
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "title");
             return View();
         }
-
-        //
-        // POST: /Article/Create
 
         [HttpPost, Authorize]
         public ActionResult Create(Article article)
@@ -68,8 +59,6 @@ namespace MyBeautyfullCMS.Controllers
             return View(article);
         }
 
-        //
-        // GET: /Article/Edit/5
         [Authorize]
         public ActionResult Edit(int id = 0)
         {
@@ -81,9 +70,6 @@ namespace MyBeautyfullCMS.Controllers
             ViewBag.TagId = new SelectList(db.Tags, "TagId", "title");
             return View(article);
         }
-
-        //
-        // POST: /Article/Edit/5
 
         [HttpPost, Authorize]
         public ActionResult Edit(Article article)
@@ -97,8 +83,6 @@ namespace MyBeautyfullCMS.Controllers
             return View(article);
         }
 
-        //
-        // GET: /Article/Delete/5
         [Authorize]
         public ActionResult Delete(int id = 0)
         {
@@ -110,8 +94,6 @@ namespace MyBeautyfullCMS.Controllers
             return View(article);
         }
 
-        //
-        // POST: /Article/Delete/5
 
         [HttpPost, ActionName("Delete"), Authorize]
         public ActionResult DeleteConfirmed(int id)
@@ -128,9 +110,20 @@ namespace MyBeautyfullCMS.Controllers
             var articles = db.Articles
                              .Where(a => a.status.Equals(true))
                              .ToList()
-                             .Take(10);
+                             .Take(3);
                             
 
+            return View(articles);
+        }
+
+        [AllowAnonymous]
+        public ActionResult TagList(int id = 0)
+        {
+            ViewBag.TagName = db.Tags.Find(id).title;
+            var articles = db.Articles
+                             .Where(a => a.status.Equals(true))
+                             .Where(a => a.TagId.Equals(id))
+                             .ToList();
             return View(articles);
         }
 
@@ -138,6 +131,17 @@ namespace MyBeautyfullCMS.Controllers
         public ActionResult ListJson()
         {
             return Json(db.Articles.ToList(), JsonRequestBehavior.AllowGet);
+        }
+
+        /**
+         *  Affichage d'une liste de liens avec le titre des pages
+         **/
+        [AllowAnonymous]
+        public ActionResult DisplayHeaderMenu()
+        {
+            return PartialView(db.Articles.Where(a => a.status.Equals(true))
+                                          .ToList()
+                                          .Take(3));
         }
 
     }

@@ -1,9 +1,5 @@
 ﻿@model IEnumerable<MyBeautyfullCMS.Models.StaticPage>
 
-@{
-    ViewBag.Title = "Index";
-}
-
 @foreach (var item in Model) {
    <li> <a href="@Url.Action("Index","StaticPage", new { id=item.PageId })">@Html.DisplayFor(modelItem => item.title)</a></li>
 }

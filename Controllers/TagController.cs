@@ -116,5 +116,14 @@ namespace MyBeautyfullCMS.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        /**
+         *  Affichage d'une liste de liens avec le titre des pages
+         **/
+        [AllowAnonymous]
+        public ActionResult DisplayHeaderMenu()
+        {
+            return PartialView(db.Tags.ToList());
+        }
     }
 }
