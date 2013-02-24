@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Todo.Site
+namespace MyBeautyfullCMS
 {
     public class BundleConfig
     {
