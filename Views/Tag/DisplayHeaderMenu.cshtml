@@ -1,0 +1,5 @@
+﻿@model IEnumerable<MyBeautyfullCMS.Models.Tag>
+
+@foreach (var item in Model) {
+   <li> <a href="@Url.Action("TagList","Article", new { id=item.TagId })">@Html.DisplayFor(modelItem => item.title)</a></li>
+}
