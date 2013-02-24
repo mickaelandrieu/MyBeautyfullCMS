@@ -10,63 +10,63 @@
     <member name="P:Microsoft.Web.WebPages.OAuth.AuthenticationClientData.DisplayName"></member>
     <member name="P:Microsoft.Web.WebPages.OAuth.AuthenticationClientData.ExtraData"></member>
     <member name="T:Microsoft.Web.WebPages.OAuth.OAuthAccount">
-      <summary>Represents an OAuth or OpenID account.</summary>
+      <summary>Représente un compte OAuth ou OpenID.</summary>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthAccount.#ctor(System.String,System.String)">
-      <summary>Initializes a new instance of the <see cref="T:Microsoft.Web.WebPages.OAuth.OAuthAccount" /> class.</summary>
-      <param name="provider">The name of the provider.</param>
-      <param name="providerUserId">The provider user ID.</param>
+      <summary>Initialise une nouvelle instance de la classe <see cref="T:Microsoft.Web.WebPages.OAuth.OAuthAccount" />.</summary>
+      <param name="provider">Nom du fournisseur.</param>
+      <param name="providerUserId">Identifiant utilisateur de fournisseur.</param>
     </member>
     <member name="P:Microsoft.Web.WebPages.OAuth.OAuthAccount.Provider">
-      <summary>Gets the provider name.</summary>
-      <returns>The provider name.</returns>
+      <summary>Obtient le nom du fournisseur.</summary>
+      <returns>Nom du fournisseur.</returns>
     </member>
     <member name="P:Microsoft.Web.WebPages.OAuth.OAuthAccount.ProviderUserId">
-      <summary>Gets the provider user ID.</summary>
-      <returns>The provider user ID.</returns>
+      <summary>Obtient l'identifiant utilisateur de fournisseur.</summary>
+      <returns>Identifiant utilisateur de fournisseur.</returns>
     </member>
     <member name="T:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity">
-      <summary>Manages security that uses OAuth authentication providers like Facebook, Twitter, LinkedIn, Windows Live and OpenID authentication providers like Google and Yahoo.</summary>
+      <summary>Gère la sécurité qui utilise les fournisseurs d'authentification OAuth tels que Facebook, Twitter, LinkedIn et Windows Live, ainsi que les fournisseurs d'authentification OpenID tels que Google et Yahoo.</summary>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.CreateOrUpdateAccount(System.String,System.String,System.String)">
-      <summary>Creates or updates the account using the specified provider and user ID for the provider ID and associate the new account with the specified user name.</summary>
-      <param name="providerName">The provider name.</param>
-      <param name="providerUserId">The user ID for the specified provider.</param>
-      <param name="userName">The name of the user.</param>
+      <summary>Crée ou met à jour le compte à l'aide du fournisseur et de l'identifiant utilisateur spécifiés pour l'ID de fournisseur, puis associe le nouveau compte au nom d'utilisateur spécifié.</summary>
+      <param name="providerName">Nom du fournisseur.</param>
+      <param name="providerUserId">Identifiant utilisateur du fournisseur spécifié.</param>
+      <param name="userName">Nom de l'utilisateur.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.DeleteAccount(System.String,System.String)">
-      <summary>Deletes the specified membership account.</summary>
-      <returns>true if the account was deleted, or false if it was not.</returns>
-      <param name="providerName">The provider name.</param>
-      <param name="providerUserId">The user ID for the specified provider.</param>
+      <summary>Supprime le compte spécifié.</summary>
+      <returns>true si le compte a été supprimé ; sinon, false.</returns>
+      <param name="providerName">Nom du fournisseur.</param>
+      <param name="providerUserId">Identifiant utilisateur du fournisseur spécifié.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.GetAccountsFromUserName(System.String)">
-      <summary>Gets the account or accounts that are associated using the specified user name.</summary>
-      <returns>The collection of accounts.</returns>
-      <param name="userName">The user name.</param>
+      <summary>Obtient le ou les comptes associés à l'aide du nom d'utilisateur spécifié.</summary>
+      <returns>Collection de comptes.</returns>
+      <param name="userName">Nom d'utilisateur.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.GetOAuthClientData(System.String)"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.GetUserName(System.String,System.String)">
-      <summary>Returns the user ID for the specified OAuth or OpenID provider and provider user ID.</summary>
-      <returns>The user ID, or null if there is no user ID associated with the OAuth or Open ID provider user ID.</returns>
-      <param name="providerName">The provider name.</param>
-      <param name="providerUserId">The user ID for the specified provider.</param>
+      <summary>Retourne l'identifiant utilisateur pour le fournisseur et l'identifiant utilisateur de fournisseur OAuth ou OpenID spécifiés.</summary>
+      <returns>Identifiant utilisateur ou null si aucun identifiant utilisateur n'est associé à l'identifiant utilisateur de fournisseur OAuth ou OpenID.</returns>
+      <param name="providerName">Nom du fournisseur.</param>
+      <param name="providerUserId">Identifiant utilisateur du fournisseur spécifié.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.HasLocalAccount(System.Int32)"></member>
     <member name="P:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.IsAuthenticatedWithOAuth">
-      <summary>Gets a value that indicates whether the user has been authenticated using OAuth.</summary>
-      <returns>true if the user has been authenticated using OAuth; otherwise, false.</returns>
+      <summary>Obtient une valeur qui indique si l'utilisateur a été authentifié à l'aide d'OAuth.</summary>
+      <returns>true si l'utilisateur a été authentifié à l'aide d'OAuth ; sinon, false.</returns>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.Login(System.String,System.String,System.Boolean)">
-      <summary>Logs the user in.</summary>
-      <returns>true if login was successful; otherwise, false.</returns>
-      <param name="providerName">The provider name.</param>
-      <param name="providerUserId">The user ID for the specified provider.</param>
-      <param name="createPersistentCookie">true to create a persistent cookie so that the login information is saved across browser sessions; otherwise, false.</param>
+      <summary>Connecte l'utilisateur.</summary>
+      <returns>true en cas de connexion réussie ; sinon, false.</returns>
+      <param name="providerName">Nom du fournisseur.</param>
+      <param name="providerUserId">Identifiant utilisateur du fournisseur spécifié.</param>
+      <param name="createPersistentCookie">true pour créer un cookie persistant afin que les informations de connexion soient enregistrées dans les sessions de navigateur ; sinon, false.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RegisterClient(DotNetOpenAuth.AspNet.IAuthenticationClient)">
-      <summary>Registers an OAuth authentication client.</summary>
-      <param name="client">One of the supported OAuth clients.</param>
+      <summary>Enregistre un client d'authentification OAuth.</summary>
+      <param name="client">Un des clients OAuth pris en charge.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RegisterClient(DotNetOpenAuth.AspNet.IAuthenticationClient,System.String,System.Collections.Generic.IDictionary{System.String,System.Object})"></member>
     <member name="P:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RegisteredClientData"></member>
@@ -89,27 +89,27 @@
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RegisterYahooClient(System.String)"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RegisterYahooClient(System.String,System.Collections.Generic.IDictionary{System.String,System.Object})"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RequestAuthentication(System.String)">
-      <summary>Requests the specified provider to start the authentication by directing users to an external website.</summary>
-      <param name="provider">The OAuth provider.</param>
+      <summary>Demande au fournisseur spécifié de lancer l'authentification en dirigeant les utilisateurs vers un site Web externe.</summary>
+      <param name="provider">Fournisseur OAuth.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.RequestAuthentication(System.String,System.String)">
-      <summary>Requests the specified provider to start the authentication by directing users to an external website, and directs the provider to redirect the user to the specified URL when authentication is successful.</summary>
-      <param name="provider">The OAuth provider.</param>
-      <param name="returnUrl">The URL to return to when authentication is successful.</param>
+      <summary>Demande au fournisseur spécifié de lancer l'authentification en dirigeant les utilisateurs vers un site Web externe et indique au fournisseur de rediriger l'utilisateur vers l'URL spécifiée en cas de réussite de l'authentification.</summary>
+      <param name="provider">Fournisseur OAuth.</param>
+      <param name="returnUrl">URL à retourner en cas de réussite de l'authentification.</param>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.SerializeProviderUserId(System.String,System.String)"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.TryDeserializeProviderUserId(System.String,System.String@,System.String@)"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.TryGetOAuthClientData(System.String,Microsoft.Web.WebPages.OAuth.AuthenticationClientData@)"></member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.VerifyAuthentication">
-      <summary>Returns a value that indicates whether the user account has been confirmed by the provider.</summary>
-      <returns>A <see cref="T:DotNetOpenAuth.AspNet.AuthenticationResult" /> instance that you can query to determine whether verification was successful.</returns>
+      <summary>Retourne une valeur qui indique si le compte d'utilisateur a été confirmé par le fournisseur.</summary>
+      <returns>Instance <see cref="T:DotNetOpenAuth.AspNet.AuthenticationResult" /> que vous pouvez interroger pour déterminer si la vérification a réussi.</returns>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.OAuthWebSecurity.VerifyAuthentication(System.String)"></member>
     <member name="T:Microsoft.Web.WebPages.OAuth.PreApplicationStartCode">
-      <summary>Provides a registration point for pre-application start code for OAuth-based security.</summary>
+      <summary>Fournit un point de référence pour le code de pré-démarrage de l'application pour la sécurité OAuth.</summary>
     </member>
     <member name="M:Microsoft.Web.WebPages.OAuth.PreApplicationStartCode.Start">
-      <summary>Registers the OAuth pre-application start code.</summary>
+      <summary>Inscrit le code de pré-démarrage de l'application OAuth.</summary>
     </member>
   </members>
 </doc>

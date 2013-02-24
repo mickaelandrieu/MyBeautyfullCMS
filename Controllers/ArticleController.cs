@@ -140,5 +140,27 @@ namespace Todo.Site.Controllers
             return Json(db.Articles.ToList(), JsonRequestBehavior.AllowGet);
         }
 
+        /**
+         *  Affichage d'une liste de liens avec le titre des pages
+         **/
+        [AllowAnonymous]
+        public ActionResult DisplayHeaderMenu()
+        {
+            return PartialView(db.Articles.Where(a => a.status.Equals(true))
+                                          .ToList()
+                                          .Take(3));
+        }
+
+        [AllowAnonymous]
+        public ActionResult TagList(int id = 0)
+        {
+            ViewBag.TagName = db.Tags.Find(id).title;
+            var articles = db.Articles
+                             .Where(a => a.status.Equals(true))
+                             .Where(a => a.TagId.Equals(id))
+                             .ToList();
+            return View(articles);
+        }
+
     }
 }
