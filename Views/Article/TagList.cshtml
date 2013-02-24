@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Todo.Site.Models.Article>
+
+@{
+    ViewBag.Title = "Liste des articles pour cette catégorie";
+}
+
+<!-- Services -->
+    <section class="services">
+        <div class="row">
+            <div class="span4">
+                     
+            <!-- Service #1 -->
+            <div class="service">
+                <!-- Icon & title. Font Awesome icon used. -->
+                <h5><span><i class="icon-gift"></i> Code open source</span></h5>
+                <p>La licence MIT de ce projet garantit la libre utilisation de ces sources, sauf mention contraires. </p>
+            </div>
+                        
+            </div>
+            <div class="span4">
+                     
+            <!-- Service #2 -->
+            <div class="service">
+                <!-- Icon & title. Font Awesome icon used. -->
+                <h5><span><i class="icon-cloud"></i> Hébergement Cloud</span></h5>
+                <p>La mise en ligne de ce projet est effectuée à l'aide de la plateforme Cloud AppHarbor. </p>
+            </div>                     
+                        
+            </div>
+            <div class="span4">
+                     
+            <!-- Service #3 -->
+            <div class="service">
+                <!-- Icon & title. Font Awesome icon used. -->
+                <h5><span><i class="icon-home"></i> Du "fait maison"</span></h5>
+                <p>Le projet a été développé de zéro, et entièrement réalisé par le groupe.</p>
+            </div>  
+                        
+            </div>
+        </div>
+    </section>
+<!-- Posts récents -->
+    <section class="rposts">
+        <h4>Liste pour la catégorie <b>@ViewBag.TagName</b></h4>
+        <div class="row">
+            <div class="span6">
+            @foreach (var item in Model) {
+                  
+                <!-- Recent post 1. Class name should be "rpost1" -->
+                <article class="rpost1">
+                <!-- Title & Para -->
+                    <div class="rdetails">
+                        <h5><a href="@Url.Action("Details","Article", new { id=item.ArticleId })">@Html.DisplayFor(modelItem => item.title)</a></h5>
+                        <p>
+                            <strong>
+                                @Html.DisplayFor(modelItem => item.introduction)
+                            </strong><br />
+                            <a href="@Url.Action("Details","Article", new { id = item.ArticleId })" class="article-more-info btn">En savoir plus >></a>
+                             
+                        </p>
+                    </div>
+                </article>
+            }
+            @if (Model.Count() == 0) { 
+                <p><strong>Pas d'articles dans cette catégorie.</strong></p>
+            }
+            </div>
+        </div>
+    </section>
