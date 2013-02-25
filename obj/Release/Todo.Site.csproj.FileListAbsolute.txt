@@ -110,3 +110,4 @@ C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Si
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.pdb
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\Mvc.Mailer.dll
+C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.csprojResolveAssemblyReference.cache

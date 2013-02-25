@@ -161,6 +161,16 @@ namespace Todo.Site.Controllers
                              .ToList();
             return View(articles);
         }
+        [AllowAnonymous]
+        public ActionResult BigList()
+        {
+            var articles = db.Articles
+                             .Where(a => a.status.Equals(true))
+                             .ToList();
+
+
+            return View(articles);
+        }
 
     }
 }

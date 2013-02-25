@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Todo.Site.Models.Article>
+
+@{
+    ViewBag.Title = "Articles";
+}
+
+<!-- Posts récents -->
+    <section class="rposts">
+        <h4>Tous les articles</h4>
+        <div class="row">
+            <div class="span6">
+            @foreach (var item in Model) {
+                  
+                <!-- Recent post 1. Class name should be "rpost1" -->
+                <article class="rpost1">
+                <!-- Title & Para -->
+                    <div class="rdetails">
+                        <h5><a href="@Url.Action("Details","Article", new { id=item.ArticleId })">@Html.DisplayFor(modelItem => item.title)</a></h5>
+                        <p>
+                            <strong>
+                                @Html.DisplayFor(modelItem => item.introduction)
+                            </strong><br />
+                            <a href="@Url.Action("Details","Article", new { id = item.ArticleId })" class="article-more-info btn">En savoir plus >></a>
+                             
+                        </p>
+                    </div>
+                </article>
+            }
+            </div>
+        </div>
+    </section>
+
