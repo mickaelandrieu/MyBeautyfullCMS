@@ -6,6 +6,9 @@
         <title>@ViewBag.Title</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
+        
+        <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
@@ -14,7 +17,7 @@
            <div class="container">
               <div class="row">
                  <div class="span5">
-                    <!-- Logo and site link -->
+                    
                     <div class="logo">
                        <h1>
                            <a class="brand active" style="display: inline-block; height: 100px;" href="@Url.Action("List","Article")"><img src="@Url.Content("~/Content/sucre.png")" alt="Sucré Salé" /></a>
@@ -37,14 +40,14 @@
                     Menu
                   </a>
                   <div class="nav-collapse">
-                    <!-- Navigation links starts here -->
+                    
                     <ul class="nav">
-                      <!-- Main menu -->
+                      
                       <li class="active"><a href="@Url.Action("List","Article")">Accueil</a></li>
                       <li><a href="@Url.Action("Index","Article")">Articles</a></li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dossiers<b class="caret"></b></a>
-                        <!-- Submenus -->
+                        
                         <ul class="dropdown-menu">
                          @Html.Action("DisplayHeaderMenu", "StaticPage")
                         </ul>
@@ -52,7 +55,7 @@
               
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
-                        <!-- Submenus -->
+                        
                         <ul class="dropdown-menu">
                           <li><a href="@Url.Action("Index","Contact")">Contactez nous</a></li>
                           <li><a href="@Url.Action("Index","MyBeautyfullCMS")">La plateforme MyBeautyfullCMS</a></li>
@@ -63,7 +66,7 @@
                      {
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
-                        <!-- Submenus -->
+                        
                         <ul class="dropdown-menu">
                           <li>@Html.ActionLink("Gestion des Articles", "Index", "Article")</li>
                           <li>@Html.ActionLink("Gestion des Tags", "Index", "Tag")</li>
@@ -86,7 +89,7 @@
                   <div class="row">
                      <div class="span12">
                         <section >
-                        <!--Body content-->
+                       
                                 @RenderSection("featured", required: false)
                             <section id="principal-view">
                                 @RenderBody()
@@ -101,14 +104,14 @@
             <div class="container">
             <div class="row">
                 <div class="span4">
-                    <!-- Widget 1 -->
+                    <
                     <div class="widget">
                     <h4>Twitter</h4>
                         <div id="tweets"></div>
                     </div>
                 </div>
                 <div class="span4">
-                    <!-- widget 2 -->
+                    
                     <div class="widget">
                     <h4>Posts récents</h4>
                         <ul>
@@ -117,7 +120,7 @@
                     </div>
                 </div>
                 <div class="span4">
-                    <!-- Widget 3 -->
+                    
                     <div class="widget">
                     <h4>Categories</h4>
                     <ul>

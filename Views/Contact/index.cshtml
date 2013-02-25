@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Todo.Site.Models.ContactForm
+@{
     ViewBag.Title = "";
 }
 
@@ -34,34 +35,39 @@
                                     <h5>Formulaire de Contact</h5>
                                     <hr />
                                     <div class="form">
-                                      <!-- Contact form (not working)-->
-                                      <form class="form-horizontal">
+                                      @using (Html.BeginForm("Contact", "Contact", FormMethod.Post, new { @class = "form-horizontal" }))
+                                       {
+                                            @Html.ValidationSummary(true)
                                           <!-- Name -->
                                           <div class="control-group">
                                             <label class="control-label" for="name">Nom</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="name">
+                                              @Html.EditorFor(model => model.name, new { @class = "input-medium", id = "name" })
+                                              <!--<input type="text" class="input-medium" id="name">-->
                                             </div>
                                           </div>
                                           <!-- Email -->
                                           <div class="control-group">
                                             <label class="control-label" for="email">Email</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="email">
+                                               @Html.EditorFor(model => model.email, new { @class = "input-medium", id = "email" })
+                                              <!--<input type="text" class="input-medium" id="email">-->
                                             </div>
                                           </div>
                                           <!-- Website -->
                                           <div class="control-group">
                                             <label class="control-label" for="website">Site Web</label>
                                             <div class="controls">
-                                              <input type="text" class="input-medium" id="website">
+                                               @Html.EditorFor(model => model.website, new { @class = "input-medium", id = "website" })
+                                              <!--<input type="text" class="input-medium" id="website">-->
                                             </div>
                                           </div>
                                           <!-- Comment -->
                                           <div class="control-group">
                                             <label class="control-label" for="comment">Commentaire</label>
                                             <div class="controls">
-                                              <textarea class="input-madium" id="comment" rows="3"></textarea>
+                                                 @Html.TextAreaFor(model => model.comment, new { @class = "input-medium", id = "comment", row = 3 })
+                                              <!--<textarea class="input-madium" id="comment" rows="3"></textarea>-->
                                             </div>
                                           </div>
                                           <!-- Buttons -->
@@ -70,7 +76,17 @@
                                             <button type="submit" class="btn">Envoyer</button>
                                             <button type="reset" class="btn">Effacer</button>
                                           </div>
-                                      </form>
+                                          if(@ViewBag.Alert != null) {
+                                                 <div class="alert alert-error">
+                                                    @ViewBag.Alert
+                                                 </div>
+                                          }
+                                          if(@ViewBag.Success != null) {
+                                                 <div class="alert alert-success">
+                                                    @ViewBag.Success
+                                                 </div>
+                                          }
+                                       }
                                     </div>
                                  </div>
                            </div>

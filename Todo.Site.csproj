@@ -41,6 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mvc.Mailer">
+      <HintPath>..\packages\MvcMailer.4.0\lib\40\Mvc.Mailer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -172,11 +175,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mailers\IUserMailer.cs" />
+    <Compile Include="Mailers\UserMailer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AdminModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
     <Compile Include="Models\BlogContext.cs" />
     <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\ContactFormModels.cs" />
     <Compile Include="Models\StaticPageModels.cs" />
     <Compile Include="Models\TagModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -319,6 +325,8 @@
     <Content Include="Views\Tag\DisplayHeaderMenu.cshtml" />
     <Content Include="Views\Contact\index.cshtml" />
     <Content Include="Views\MyBeautyfullCMS\index.cshtml" />
+    <Content Include="Views\UserMailer\_Layout.cshtml" />
+    <Content Include="Views\UserMailer\Welcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

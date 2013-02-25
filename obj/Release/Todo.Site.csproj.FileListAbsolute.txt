@@ -107,6 +107,6 @@ C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Si
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\System.Web.WebPages.Razor.resources.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\WebMatrix.Data.resources.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\fr\WebMatrix.WebData.resources.dll
-C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.csprojResolveAssemblyReference.cache
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.dll
 C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\obj\Release\Todo.Site.pdb
+C:\Users\mickael.andrieu\Documents\Visual Studio 2012\Projects\Todo.Site\Todo.Site\bin\Mvc.Mailer.dll

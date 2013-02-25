@@ -10,7 +10,7 @@ namespace Todo.Site.Controllers
     {
         //
         // GET: /MyBeautyfullCMS/
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();

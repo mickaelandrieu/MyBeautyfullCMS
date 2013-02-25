@@ -3,23 +3,67 @@
 @{
     ViewBag.Title = @Html.DisplayFor(model => model.title);
 }
-
-
-<article class="article article-detail">
-    <h2>@Html.DisplayFor(model => model.title)</h2>
-    <p class="badge badge-info">@ViewBag.TagName</p>
-    <p class="article-intro">
-      <span>Par: <b class="badge badge-success">@ViewBag.AuthorName</b></span>
-        <br />
-        paru le : <time datetime="@Html.DisplayFor(model => model.createdAt)">@Html.DisplayFor(model => model.createdAt)</time>
-    </p>
-    <div>
-        @Html.DisplayFor(model => model.content)
+<section class="blog">
+    <div class="row">
+        <div class="span12">
+             <div class="row">
+                <div class="span8">
+                    <div class="posts">
+                        <article class="entry">
+                            <h2>@Html.DisplayFor(model => model.title)</h2>
+                                 
+                            <!-- Meta details -->
+                            <div class="meta">
+                            <i class="icon-calendar"></i>
+                                <time datetime="@Html.DisplayFor(model => model.createdAt)">@Html.DisplayFor(model => model.createdAt)</time>
+                                <i class="icon-user"></i> <b>@ViewBag.AuthorName</b>
+                                <i class="icon-folder-open"></i> <span>@ViewBag.TagName</span> <span class="pull-right"></span>
+                            </div>
+                            <div>
+                                @Html.DisplayFor(model => model.content)
+                            </div>
+                        </article>
+                        <div class="well">
+                            <!-- Social media icons -->
+                            <div class="social pull-left">
+                            <h5>Restez connectés: </h5>
+                            <a href="#"><i class="icon-facebook facebook"></i></a>
+                            <a href="#"><i class="icon-twitter twitter"></i></a>
+                            <a href="#"><i class="icon-google-plus google-plus"></i></a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p>
+                            @if (ViewContext.HttpContext.User.Identity.IsAuthenticated)
+                            {
+                                @Html.ActionLink("Editer", "Edit", new { id=Model.ArticleId}, new { @class="btn" }) 
+                            }
+                            @Html.ActionLink("Retour à la liste", "List", null, new { @class="btn"})
+                        </p>
+                    </div>
+                </div>
+                <!-- aside bar -->
+                <div class="span4">
+                    <div class="sidebar">
+                        <!-- Widget -->
+                        <div class="widget" style="opacity: 0.3;">
+                            <h4>Recherche</h4>
+                            <form method="get" id="searchform" action="#" class="form-search">
+                            <input type="text" value="" name="s" id="s" class="input-medium"/>
+                            <button type="submit" class="btn btn-disabled">Indisponible</button>
+                            </form>
+                        </div>
+                        <h4>A propos</h4>
+                            <p>
+                            <em>Sucre Sale</em> est un site de filles pour les filles.
+                            <br>
+                            On pourrait en dire bien plus mais nous n'avons pas de ligne éditoriale bien précise !
+                            </p>                      
+                    </div>                                                
+                </div>
+            </div>
+        </div>
     </div>
-
-</article>
-
-<p>
-    @Html.ActionLink("Editer", "Edit", new { id=Model.ArticleId }) |
-    @Html.ActionLink("Retour à la liste", "List")
-</p>
+</section>
+        
+        
