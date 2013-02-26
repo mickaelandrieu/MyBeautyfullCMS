@@ -42,11 +42,11 @@
     <section class="rposts">
         <h4>Articles Récents</h4>
         <div class="row">
-            <div class="span6">
+            <div class="span12">
             @foreach (var item in Model) {
                   
                 <!-- Recent post 1. Class name should be "rpost1" -->
-                <article class="rpost1">
+                <article class="rpost1" style="width: 33%;">
                 <!-- Title & Para -->
                     <div class="rdetails">
                         <h5><a href="@Url.Action("Details","Article", new { id=item.ArticleId })">@Html.DisplayFor(modelItem => item.title)</a></h5>
